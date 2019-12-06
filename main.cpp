@@ -10,7 +10,7 @@
 
 int main() {
     char str[10];
-    containers::queue<five_angles<double>,q_allocator<five_angles<double >,5*sizeof(five_angles<double>)>> q;
+    containers::queue<five_angles<double>,q_allocator<five_angles<double >,10*sizeof(five_angles<double>)>> q;
     while(std::cin >> str){
         if(strcmp(str,"push")==0){
             five_angles<double> five_angle(std::cin);
