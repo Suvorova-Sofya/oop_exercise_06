@@ -67,8 +67,6 @@ void q_allocator<T, ALLOC_SIZE>::deallocate(T* ptr, std::size_t n) {
         return;
     }
     free_blocks_.insert(free_blocks_.end(),reinterpret_cast<char*>(ptr));
-    memory_pool_tail_ -= sizeof(T);
-
 }
 
 
