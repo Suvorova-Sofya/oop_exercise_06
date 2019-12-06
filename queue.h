@@ -239,7 +239,7 @@ namespace containers {
         node* ptr_result =allocator_.allocate(1);
         ptr_result->value=value;
         //std::allocator_traits<allocator_type>::construct(allocator_,ptr_result, value);
-        std::unique_ptr<node,queue<T, Allocater>::deleter> new_node(ptr_result,deleter{&allocator_});
+        std::unique_ptr<queue<T,Allocater>::node,queue<T, Allocater>::deleter> new_node(ptr_result,deleter{&allocator_});
         if (it.ptr_) {
             new_node->parent = it.ptr_;
             it.ptr_->next = std::move(new_node);

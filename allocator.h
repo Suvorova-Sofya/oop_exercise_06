@@ -18,9 +18,9 @@ struct q_allocator {
     };
 
     q_allocator() :
-            memory_pool_begin_(new char[ALLOC_SIZE]),
-            memory_pool_end_(memory_pool_begin_ + ALLOC_SIZE),
-            memory_pool_tail_(memory_pool_begin_) {}
+            memory_pool_begin_{new char[ALLOC_SIZE]()},
+            memory_pool_end_{memory_pool_begin_ + ALLOC_SIZE},
+            memory_pool_tail_{memory_pool_begin_} {}
 
     q_allocator(const q_allocator &) = delete;
 
